@@ -1,0 +1,1 @@
+This scrapes the list of AI codes from the National Milk Records website at http://www.nmr.co.uk/ai-codes it downloads each PDF file and converts it by running pdf2txt.py locally, then it scans for the information contained.
