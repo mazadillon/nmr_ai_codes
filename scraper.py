@@ -59,7 +59,7 @@ def scrape_codes(url):
             scraperwiki.sqlite.save(['code'], bull) # Save to database
 
 data = scraperwiki.scrape('http://www.nmr.co.uk/ai-codes') # Scrape list of PDFs
-docs = re.findall('(/images/[\sA-Z0-9a-z_/-]*name\.pdf)',data) # Find file names
+docs = re.findall('(/[a-z]{2-20}/[\sA-Z0-9a-z_/-]*name\.pdf)',data) # Find file names
 
 for doc in docs: # Loop through PDF file names
     done = scraperwiki.sqlite.select('* from docs WHERE path = "'+doc+'"') # Has it been scanned already?
